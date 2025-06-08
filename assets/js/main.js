@@ -246,4 +246,234 @@ if (st) {
       behavior: "smooth",
     });
   });
+
+  // Portafolio
+  const portfolioItems = [
+    {
+      title: "Diseño de Alien",
+      description:
+        "Short description for the ones who look for something new. Awesome!",
+      imageUrl: "./assets/img/portfolio/small/Alien.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Astronauta",
+      description:
+        "Short description for the ones who look for something new. Awesome!",
+      imageUrl: "./assets/img/portfolio/small/Astronauta.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de BugsBunny",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/BugsBunny.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Calavera",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Calavera.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Cigarrillo",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Cigarrillo.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Cr7",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Cr7.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Fantasma",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Fantasma.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Freezer",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Freezer.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Furia",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/FuriaNocturna.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Messi",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Messi.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Pantera Rosa",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/PanteraRosa.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Saturno",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Saturno.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Stich",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Stich.png",
+      category: "ten",
+    },
+    {
+      title: "Diseño de Toad",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/small/Tortuga.png",
+      category: "ten",
+    },
+    {
+      title: "Frase Balenciaga",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/normal/BalenciagaCBeige.png",
+      category: "fifteen",
+    },
+    {
+      title: "Diseño de Cr7",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/normal/Cr7SaraCBlanca.png",
+      category: "fifteen",
+    },
+    {
+      title: "Diseño de Jiraiya",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/normal/Jiraiya.png",
+      category: "fifteen",
+    },
+    {
+      title: "Diseño de Naruto",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/normal/NarutoCBlanca.png",
+      category: "fifteen",
+    },
+    {
+      title: "Diseño de Akatsuki",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/normal/AkatsukiCNegra.png",
+      category: "fifteen",
+    },
+    {
+      title: "Diseño de BadBunny",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/BadBunny_3CBeige.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Canserbero",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/Canserbero.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Dragon Ball",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/DragonBallCNegra.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Gaara",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/Gaara_2CNegra.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de JujutsuKaisen",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/JujutsuKaisenCBeige.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Messi",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/MessiCBlanco.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Once Piece",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/OnePiece.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Paulo Londra",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/PauloLondraCBeige.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Snoopy",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/SnoopyCBeige.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Spider",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/Spider_3CBlanca.png",
+      category: "twenty",
+    },
+    {
+      title: "Diseño de Spiderman",
+      description: "Descripción del otro diseño.",
+      imageUrl: "./assets/img/portfolio/big/Spiderman.png",
+      category: "twenty",
+    },
+  ];
+
+  const container = document.getElementById("portfolio-container");
+
+  portfolioItems.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "group";
+    article.dataset.filter = item.category;
+
+    article.innerHTML = `
+      <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
+        <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-full object-cover" />
+        <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
+          <div class="flex flex-wrap gap-2 p-4">
+            <div class="inline-block relative">
+              <a href="${item.imageUrl}" data-gallery="portfolio-${item.category}" class="glightbox text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus:bg-primary-dark-10 dark:focus:text-primary-color">
+                <i class="lni lni-zoom-in"></i>
+              </a>
+            </div>
+            <div class="portfolio-icon">
+              <a href="javascript:void(0)" class="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus:bg-primary-dark-10 dark:focus:text-primary-color">
+                <i class="lni lni-link"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4">
+        <h4 class="mb-2">
+          <a href="javascript:void(0)" class="text-[1.5rem] leading-tight text-inherit">${item.title}</a>
+        </h4>
+        <p>${item.description}</p>
+      </div>
+    `;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "portfolio col-12 sm:col-6 lg:col-4";
+    wrapper.appendChild(article);
+
+    container.appendChild(wrapper);
+  });
+
+  const lightbox = GLightbox({
+    selector: ".glightbox",
+  });
 }
