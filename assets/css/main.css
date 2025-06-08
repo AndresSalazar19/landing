@@ -942,18 +942,22 @@ p + p{
   --tw-bg-opacity: 0.7;
 }
 
-.ic-navbar.sticky .ic-navbar-logo{
-  --tw-text-opacity: 1;
-  color: rgb(30 31 36 / var(--tw-text-opacity));
+/* Normal: blanco */
+.ic-navbar .ic-navbar-logo svg {
+  color: white;
+}
+
+.ic-navbar.sticky .ic-navbar-logo svg {
+  color: black;
+}
+
+.ic-navbar.sticky .ic-navbar-logo svg #logo-aura-ellipse {
+  stroke: #3d63dd; /* azul */
 }
 
 .ic-navbar.sticky .ic-navbar-logo:where([data-web-theme=dark], [data-web-theme=dark] *){
   --tw-text-opacity: 1;
   color: rgb(238 238 240 / var(--tw-text-opacity));
-}
-
-.ic-navbar.sticky .ic-navbar-logo #NavbarBrandIcon{
-  fill: #3d63dd;
 }
 
 .ic-navbar.sticky .ic-navbar-toggler{
