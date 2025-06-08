@@ -940,9 +940,11 @@ p + p{
   border-color: #d6dbfc2f;
   background-color: rgb(29 34 46 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.7;
+
 }
 
-/* Normal: blanco */
+
+
 .ic-navbar .ic-navbar-logo svg {
   color: white;
 }
@@ -953,6 +955,10 @@ p + p{
 
 .ic-navbar.sticky .ic-navbar-logo svg #logo-aura-ellipse {
   stroke: #3d63dd; /* azul */
+}
+
+.ic-navbar.sticky:where([data-web-theme=dark], [data-web-theme=dark] *) .ic-navbar-logo svg{
+  color: white;
 }
 
 .ic-navbar.sticky .ic-navbar-logo:where([data-web-theme=dark], [data-web-theme=dark] *){
@@ -968,6 +974,7 @@ p + p{
 .ic-navbar.sticky .ic-navbar-toggler:where([data-web-theme=dark], [data-web-theme=dark] *){
   --tw-text-opacity: 1;
   color: rgb(238 238 240 / var(--tw-text-opacity));
+  
 }
 
 .ic-navbar.menu-show .ic-navbar-collapse{
