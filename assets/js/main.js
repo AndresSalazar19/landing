@@ -477,3 +477,7 @@ if (st) {
     selector: ".glightbox",
   });
 }
+
+import "./file01.js";
+import "./functions.js";
+import "./firsebase.js";
