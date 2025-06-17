@@ -5,6 +5,8 @@ import {
   ref,
   set,
   push,
+  get,
+  child,
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 // Configuración usando variables de entorno definidas en Vite
@@ -45,4 +47,24 @@ export function saveVote(productID) {
     .catch((error) => {
       return { success: false, message: "Error al guardar el voto.", error };
     });
+}
+
+/**
+ * Obtiene todos los votos desde la colección "votes"
+ * @returns {Promise<Object>} - Objeto con los votos o un mensaje de error
+ */
+export async function getVotes() {
+  const dbRef = ref(database);
+
+  try {
+    const snapshot = await get(child(dbRef, "votes"));
+
+    if (snapshot.exists()) {
+      return { success: true, data: snapshot.val() };
+    } else {
+      return { success: false, message: "No se encontraron votos." };
+    }
+  } catch (error) {
+    return { success: false, message: "Error al obtener los votos.", error };
+  }
 }
