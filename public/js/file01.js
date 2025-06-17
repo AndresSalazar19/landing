@@ -68,7 +68,6 @@ const renderCards = (dataArray) => {
 
   // Iterar sobre los primeros 3 elementos
   firstThreeItems.forEach((item) => {
-    // Crear la plantilla card con Tailwind CSS v4
     const cardHTML = `
       <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
         <!-- Header de la card -->
