@@ -1,5 +1,5 @@
 "use strict";
-
+import "./file01.js";
 // Page loading
 var pageLoading = document.querySelector(".page-loading");
 
