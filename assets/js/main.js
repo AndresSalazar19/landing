@@ -1,5 +1,5 @@
 "use strict";
-
+import "./file01.js";
 // Page loading
 var pageLoading = document.querySelector(".page-loading");
 
@@ -477,7 +477,3 @@ if (st) {
     selector: ".glightbox",
   });
 }
-
-import "./file01.js";
-import "./functions.js";
-import "./firsebase.js";
