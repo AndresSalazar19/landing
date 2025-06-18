@@ -2,12 +2,6 @@
 import { saveVote, getVotes } from "./firsebase.js";
 import { fetchFakerData } from "./functions.js";
 
-(function () {
-  const mensaje = "¡Bienvenido a la página!";
-  alert(mensaje);
-  console.log(mensaje);
-})();
-
 /**
  * Muestra un toast de bienvenida si existe el elemento con el ID 'toast-interactive'.
  * @function
