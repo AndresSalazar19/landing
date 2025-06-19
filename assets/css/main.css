@@ -2093,6 +2093,13 @@ p + p{
   color: black;
 }
 
+.text-secondary {
+  --tw-text-opacity: 1;
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;    /* font-bold */
+  color: black;
+}
+
 .text-primary:where([data-web-theme="dark"], [data-web-theme="dark"] *) {
   --tw-text-opacity: 1;
   color: white;
