@@ -521,7 +521,7 @@ body{
 
 body:where([data-web-theme=dark], [data-web-theme=dark] *){
   --tw-bg-opacity: 1;
-  background-color: rgb(29 34 46 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 [tabindex]{
