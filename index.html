@@ -1970,10 +1970,11 @@
                   </p>
                 </div>
 
-                <form action="#" method="POST" class="flex flex-col gap-6">
+                <form id="formContact" action="envio" method="POST" class="flex flex-col gap-6">
                   <div class="row">
                     <div class="col-12 md:col-6">
                       <input
+                        id="name"
                         type="text"
                         name="name"
                         class="block w-full px-5 py-3 rounded-md border border-solid border-alpha-light dark:border-alpha-dark text-inherit text-base focus:border-primary"
@@ -2034,6 +2035,11 @@
                     </div>
                   </div>
                 </form>
+                <div
+                  id="mensajeExito"
+                  class="hidden mt-4 p-4 rounded-md bg-green-100 text-green-800 text-center font-semibold transition duration-300  dark:bg-green-900 dark:text-green-200"
+                    >
+                </div>
               </div>
             </div>
           </div>
@@ -2172,6 +2178,22 @@
           },
         },
       });
+
+      document.getElementById('formContact').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita envío inmediato
+
+    const nombre = document.getElementById('name').value.trim();
+    const mensajeDiv = document.getElementById('mensajeExito');
+
+    if (nombre) {
+      mensajeDiv.textContent = `¡Gracias, ${nombre}! Tu mensaje fue enviado correctamente.`;
+      mensajeDiv.classList.remove('hidden');
+      
+      setTimeout(() => {
+        mensajeDiv.classList.add('hidden');
+      }, 5000);
+    }
+  });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </body>
