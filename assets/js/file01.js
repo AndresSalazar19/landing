@@ -1,5 +1,5 @@
 "use strict";
-import { saveVote, getVotes } from "./firsebase.js";
+import { saveVote, getVotes } from "./firebase.js";
 import { fetchFakerData } from "./functions.js";
 
 /**
