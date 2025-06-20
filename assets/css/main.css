@@ -954,13 +954,16 @@ p + p{
 }
 
 .ic-navbar.sticky .ic-navbar-logo svg #logo-aura-ellipse {
-  stroke: black; /* azul */
+  stroke: black; 
 }
 
 .ic-navbar.sticky:where([data-web-theme=dark], [data-web-theme=dark] *) .ic-navbar-logo svg{
   color: white;
 }
 
+.ic-navbar.sticky:where([data-web-theme=dark], [data-web-theme=dark] *) .ic-navbar-logo svg #logo-aura-ellipse {
+  stroke: white; 
+}
 
 .ic-navbar.sticky .ic-navbar-logo:where([data-web-theme=dark], [data-web-theme=dark] *){
   --tw-text-opacity: 1;
