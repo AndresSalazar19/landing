@@ -181,50 +181,6 @@ tabs.forEach((tab) => {
   });
 });
 
-// Portfolio filter
-const portfolioFilters = document.querySelectorAll(".portfolio-menu button");
-
-portfolioFilters.forEach((filter) => {
-  filter.addEventListener("click", function () {
-    let btn = portfolioFilters[0];
-
-    while (btn) {
-      if (btn.tagName === "BUTTON") {
-        btn.classList.remove("active");
-      }
-
-      btn = btn.nextSibling;
-    }
-
-    this.classList.add("active");
-
-    let selected = filter.getAttribute("data-filter"),
-      itemsToHide = document.querySelectorAll(
-        '.portfolio-grid .portfolio :not([data-filter="' + selected + '"])'
-      ),
-      itemsToShow = document.querySelectorAll(
-        '.portfolio-grid .portfolio [data-filter="' + selected + '"]'
-      );
-
-    if (selected == "all") {
-      itemsToHide = [];
-      itemsToShow = document.querySelectorAll(
-        ".portfolio-grid .portfolio [data-filter]"
-      );
-    }
-
-    itemsToHide.forEach((el) => {
-      el.parentElement.classList.add("hide");
-      el.parentElement.classList.remove("show");
-    });
-
-    itemsToShow.forEach((el) => {
-      el.parentElement.classList.remove("hide");
-      el.parentElement.classList.add("show");
-    });
-  });
-});
-
 // Scroll to top
 var st = document.querySelector("[data-web-trigger=scroll-top]");
 
@@ -432,26 +388,42 @@ if (st) {
       category: "twenty",
     },
   ];
-
+  // 1. Variables globales
+  let swiperInstance;
   const container = document.getElementById("portfolio-container");
 
-  portfolioItems.forEach((item) => {
-    const article = document.createElement("article");
-    article.className = "group";
-    article.dataset.filter = item.category;
+  // 2. Función para renderizar los slides
+  function renderSlides(filter = "all") {
+    // destruir swiper si ya existe
+    if (swiperInstance) swiperInstance.destroy(true, true);
 
-    article.innerHTML = `
-      <div class="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
+    // limpiar contenedor
+    container.innerHTML = "";
+
+    // filtrar elementos
+    const filteredItems =
+      filter === "all"
+        ? portfolioItems
+        : portfolioItems.filter((item) => item.category === filter);
+
+    // renderizar slides
+    filteredItems.forEach((item) => {
+      const article = document.createElement("div");
+      article.className = "swiper-slide";
+      article.dataset.filter = item.category;
+
+      article.innerHTML = `
+      <div class="group relative overflow-hidden w-full aspect-[4/3] rounded-xl">
         <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-full object-cover" />
         <div class="absolute top-0 left-0 w-full aspect-[4/3] flex items-center justify-center bg-body-light-1/75 scale-[0.15] rounded-xl opacity-0 invisible group-hover:scale-95 group-hover:opacity-100 group-hover:visible">
           <div class="flex flex-wrap gap-2 p-4">
             <div class="inline-block relative">
-              <a href="${item.imageUrl}" data-gallery="portfolio-${item.category}" class="glightbox text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus:bg-primary-dark-10 dark:focus:text-primary-color">
+              <a href="${item.imageUrl}" data-gallery="portfolio-${item.category}" class="glightbox text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color">
                 <i class="lni lni-zoom-in"></i>
               </a>
             </div>
             <div class="portfolio-icon">
-              <a href="javascript:void(0)" class="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus:bg-primary-dark-10 dark:focus:text-primary-color">
+              <a href="javascript:void(0)" class="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color">
                 <i class="lni lni-link"></i>
               </a>
             </div>
@@ -466,14 +438,58 @@ if (st) {
       </div>
     `;
 
-    const wrapper = document.createElement("div");
-    wrapper.className = "portfolio col-12 sm:col-6 lg:col-4";
-    wrapper.appendChild(article);
+      container.appendChild(article);
+    });
 
-    container.appendChild(wrapper);
-  });
+    // volver a crear el swiper
+    const catalogoSwiper = new Swiper(".catalogo-carousel", {
+      slidesPerView: 1, // 3 columnas por fila
+      spaceBetween: 30,
+      grid: {
+        rows: 2, // 2 filas
+        fill: "row", // llena por fila primero
+      },
 
-  const lightbox = GLightbox({
-    selector: ".glightbox",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          slidesPerGroup: 4,
+          grid: {
+            rows: 2,
+          },
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 6,
+          grid: {
+            rows: 2,
+          },
+        },
+      },
+    });
+
+    // volver a activar glightbox
+    GLightbox({ selector: ".glightbox" });
+  }
+
+  // 3. Manejar botones de filtro
+  document.querySelectorAll(".portfolio-menu button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
+
+      document
+        .querySelectorAll(".portfolio-menu button")
+        .forEach((btn) => btn.classList.remove("active"));
+
+      button.classList.add("active");
+
+      renderSlides(selectedFilter);
+    });
   });
+  // 4. Llamar la función al cargar
+  renderSlides("all");
 }

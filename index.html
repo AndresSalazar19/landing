@@ -4,7 +4,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Copyright" content="Inazuma" />
+    <meta http-equiv="Copyright" content="Aura" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Ranyeh" />
     <meta name="rating" content="general" />
@@ -12,25 +12,25 @@
     <meta name="application-name" content="Inazuma" />
     <meta
       name="description"
-      content="Tailwind CSS Company Landing Page Template by Ranyeh."
+      content="Aura Gye - Ecuador : Tienda virtual de camisas"
     />
     <meta name="keywords" content="company" />
     <meta
       name="twitter:title"
-      content="Inazuma | Tailwind CSS Company Landing Page"
+      content="Aura | Gye - Ecuador Landing Page"
     />
     <meta
       name="twitter:description"
-      content="Tailwind CSS Company Landing Page Template by Ranyeh."
+      content="Aura Gye - Ecuador : Tienda virtual de camisas"
     />
     <meta name="twitter:image" content="./assets/img/inazuma-cover.png" />
     <meta
-      content="Inazuma | Tailwind CSS Company Landing Page"
+      content="Aura | Gye - Ecuador Landing Page"
       property="og:title"
     />
     <meta content="Inazuma" property="og:site_name" />
     <meta
-      content="Tailwind CSS Company Landing Page Template by Ranyeh."
+      content="Aura Gye - Ecuador : Tienda virtual de camisas"
       property="og:description"
     />
     <meta content="./assets/img/inazuma-cover.png" property="og:image" />
@@ -673,9 +673,21 @@
           </nav>
 
           <div
-            class="scroll-revealed portfolio-grid row"
-            id="portfolio-container"
-          ></div>
+            class="swiper catalogo-carousel common-carousel scroll-revealed"
+          >
+          <div class="swiper-wrapper" id="portfolio-container">
+
+          </div>
+           <div class="mt-[60px] flex items-center justify-center gap-1">
+              <div class="swiper-button-prev">
+                <i class="lni lni-arrow-left"></i>
+              </div>
+              <div class="swiper-button-next">
+                <i class="lni lni-arrow-right"></i>
+              </div>
+            </div>
+        </div>
+       
         </div>
       </section>
 
@@ -2150,6 +2162,7 @@
         },
       });
 
+      
       document.getElementById('formContact').addEventListener('submit', function (e) {
     e.preventDefault(); // Evita envío inmediato
 
